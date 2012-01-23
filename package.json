@@ -1,0 +1,22 @@
+{
+    "name": "delayed_event",
+    "version": "1.0",
+    "title": "Delayed Event processing",
+    "author": {
+        "name": "Matt Schmidt",
+        "email": "matt@mattptr.net",
+        "url": "http://mattptr.net"
+    },
+    "licenses": [
+        {
+            "type": "BSD",
+            "url": "http://mattptr.net/license/license.txt"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.6"
+    },
+    "description": "Adds an API for processing events after a specified amount of time.",
+    "keywords": ["events", "event", "delay", "timeout"],
+    "files": ["jquery.delayed_event.js", "demo-delay-event.html"]
+}

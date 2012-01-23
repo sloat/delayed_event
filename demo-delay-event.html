@@ -1,0 +1,33 @@
+<!doctype html>
+
+<script src="http://code.jquery.com/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="jquery.delayed_event.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+$(function () {
+    $('input[name=txt]').delayed_event('keyup', 1000, function (events) {
+        var last = events[events.length - 1];
+        console.log("Last key: " + last.which);
+        console.log($(this).val());
+    });
+
+    $('input[name=btn]').delayed_event('click', 1000, function (events) {
+        console.log(events.length + ' click(s) a second ago');
+    });
+
+    $('.hover').delayed_event('mouseenter', 1000, function () {
+        $('.toggle').show();
+    }).bind('mouseleave', function () {
+        $(this).delayed_event('stop');
+        $('.toggle').hide();
+    });
+});
+</script>
+<div>
+    <input type="text" name="txt" value="">
+    <input type="button" name="btn" value="">
+
+    <div class="hover" style="width: 200px; height: 200px; border: red solid 1px;">
+        Mouse over me.
+        <div class="toggle" style="display: none;">Now mouse out</div>
+    </div>
+</div>
